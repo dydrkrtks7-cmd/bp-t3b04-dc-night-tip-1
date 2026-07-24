@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보 — 아현 셔츠룸 시간대 선택의 구조</title>
+    <meta name="description" content="아현 셔츠룸 시간대 선택의 핵심 기준과 실제 이용 조건을 구조적으로 분석합니다. 당신의 편의가 아닌 정보의 편에서 선택하십시오.">
+    <meta name="keywords" content="아현 셔츠룸, 시간대 선택, 이용 조건, 정보, 가이드">
+    <link rel="canonical" href="https://zone-shirts-note.gangnam-night-zone.xyz/time-selection-guide">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-acid-yellow">
+    <meta property="og:title" content="아현 셔츠룸 시간대 선택 — 구조적 안내서">
+    <meta property="og:description" content="정보에 기반한 선택, 구조에 기반한 안내. 아현 셔츠룸 시간대의 진실을 드러냅니다.">
+    <style>
+        /* RESET & BASE */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
+        /* NOISE TEXTURE OVERLAY */
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E'); pointer-events: none; z-index: 100; }
+        /* BRUTALIST TYPOGRAPHY */
+        h1, h2, h3, h4 { font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.5em; }
+        h1 { font-size: clamp(2rem, 6vw, 4.5rem); line-height: 1.1; border-bottom: 4px solid #f0ff00; padding-bottom: 0.2em; }
+        h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.2; border-left: 6px solid #f0ff00; padding-left: 0.5em; margin-top: 2.5em; }
+        h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); line-height: 1.3; margin-top: 1.5em; }
+        /* LAYOUT COMPONENTS */
+        .x-hero-ou1a { position: relative; padding: 2rem 1rem; border-bottom: 2px solid #333; min-height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; }
+        .x-body-x0tn { padding: 3rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .x-body-x0tn::after { content: ''; display: block; height: 2px; background: linear-gradient(90deg, #f0ff00, transparent); margin-top: 4rem; }
+        .c-card-v7m2 { background: #1a1a1a; border: 1px solid #333; padding: 1.5rem; margin: 1.5rem 0; transition: border-color 0.3s; }
+        .c-card-v7m2:hover { border-color: #f0ff00; }
+        .c-card-v7m2 h3 { margin-top: 0; color: #f0ff00; }
+        .c-nav-k3r { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(5px); border-bottom: 1px solid #222; }
+        .c-nav-k3r__inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
+        .c-hamburger-j9k { display: none; cursor: pointer; padding: 0.5rem; border: 2px solid #f0ff00; }
+        .c-hamburger-j9k span { display: block; width: 20px; height: 2px; background: #f0ff00; margin: 4px 0; }
+        .c-menu-list-q2w { display: flex; gap: 1.5rem; list-style: none; }
+        .c-menu-list-q2w a { color: #e0e0e0; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; border: 1px solid transparent; padding: 0.25rem 0.5rem; }
+        .c-menu-list-q2w a:hover { border-color: #f0ff00; }
+        @media (max-width: 768px) {
+            .c-hamburger-j9k { display: block; }
+            .c-menu-list-q2w { position: absolute; top: 100%; left: 0; width: 100%; flex-direction: column; background: #0a0a0a; border-bottom: 1px solid #333; padding: 1rem 0; display: none; }
+            .c-menu-list-q2w.is-open { display: flex; }
+            .c-menu-list-q2w li { border-bottom: 1px solid #222; }
+            .c-menu-list-q2w a { display: block; padding: 1rem 1.5rem; }
+            .x-hero-ou1a { min-height: 30vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="c-nav-k3r">
+        <div class="c-nav-k3r__inner">
+            <div class="c-logo-t9y">셔츠룸 연구소</div>
+            <div class="c-hamburger-j9k" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="c-menu-list-q2w" id="menuList">
+                <li><a href="/">홈</a></li>
+                <li><a href="/time-selection-guide">시간대 안내</a></li>
+                <li><a href="/area-signal">지역 시그널</a></li>
+                <li><a href="/info">정보</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="x-hero-ou1a">
+        <h1>정보.<br>시대에 뒤떨어진 선택은;<br>가장 비싼 대가를 치른다.</h1>
+        <p style="font-size: 1.1rem; color: #aaa; border-top: 1px solid #333; padding-top: 1rem; margin-top: 1rem;">아현 셔츠룸 시간대 선택을 위한 구조적 정보 분석. 지역 맥락과 실제 조건만을 직설적으로 전달합니다.</p>
+    </section>
+
+    <main class="x-body-x0tn">
+        <article>
+            <h2>1. 지역적 현실: 아현의 시간 흐름</h2>
+            <p>아현은 강남의 정형화된 유흥 구조와 다른 독자적인 리듬을 갖는다. 주요 오피스 상권과 주거지가 교차하는 이 지역의 셔츠룸 시간대는 단순한 가격 정책이 아닌, 지역 생활 패턴과 인력 구성의 결과물이다.</p>
+            <div class="c-card-v7m2">
+                <h3>핵심 구조: 3단계 시간 분할</h3>
+                <ul style="list-style-type: none;">
+                    <li><strong>1단계 (오후~저녁):</strong> 지역 상인 및 초기 영업 인력 중심. 인력 구성이 가장 안정적인 시간대. 정보의 정확도가 높다.</li>
+                    <li><strong>2단계 (심야):</strong> 강남 및 타 지역 유동 인력 유입. 서비스 편차가 극대화되는 구간. 판단에 필요한 정보의 비용이 상승한다.</li>
+                    <li><strong>3단계 (새벽):</strong> 잔여 인력 기반. 선택의 폭이 급격히 좁아지며, '정보'보다는 '운'에 의존하는 구조.</li>
+                </ul>
+            </div>
+            <h2>2. 이용 조건의 허와 실</h2>
+            <p>광고되는 '조건'과 실제 '이용' 사이에는 항상 구조적 갭이 존재한다. 이 갭을 인지하지 못하는 선택은 필연적으로 후회로 귀결된다.</p>
+            <div class="c-card-v7m2">
+                <h3>가장 중요한 질문: "이 가격에 무엇이 포함되는가?"</h3>
+                <p>기본 타임, 추가 타임, 룸 차지, 세팅 비용. 이 네 가지 요소의 조합이 최종 가격을 결정한다. 많은 업소가 '기본 타임'만 강조하여 구조적 정보를 호도한다.</p>
+            </div>
+            <div class="c-card-v7m2">
+                <h3>인력에 대한 오해</h3>
+                <p>"실장이 추천해준다"는 말에 속지 마라. 실장의 추천은 구조적으로 '가장 빠른 매칭' 또는 '가장 높은 마진'을 위한 최적화일 뿐, 당신의 만족도와는 무관한 변수일 가능성이 높다.</p>
+            </div>
+            <h2>3. 올바른 선택을 위한 구조적 질문</h2>
+            <p>당신이 해야 할 일은 '예쁜 방'이나 '유명한 브랜드'를 찾는 것이 아니다. 다음 세 가지 질문에 대한 명확한 답변을 얻는 것이다.</p>
+            <div class="c-card-v7m2">
+                <h3>① "지금 이 시간대의 인력 구성은 어떻게 되는가?"</h3>
+                <p>오늘 근무하는 인력의 수, 경력, 그리고 특징. 이 정보는 업소의 통계 자료와 실시간 데이터를 통해서만 파악 가능하다.</p>
+            </div>
+            <div class="c-card-v7m2">
+                <h3>② "추가 비용 발생 조건은 명시되어 있는가?"</h3>
+                <p>이미 포함된 서비스와 별도 요금 서비스의 기준선. 사전에 합의하지 않은 모든 추가 비용은 구조적 사기의 여지가 있다.</p>
+            </div>
+            <div class="c-card-v7m2">
+                <h3>③ "이 선택에 대한 대체 옵션은 무엇인가?"</h3>
+                <p>하나의 업소가 아닌, 해당 시간대 아현 지역 전체의 구조적 선택지. 경쟁 구조 안에서 당신의 자원(시간, 비용)을 배치할 때 최적의 위치를 찾아야 한다.</p>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('menuList').classList.toggle('is-open');
+        });
+    </script>
+</body>
+</html>
